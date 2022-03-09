@@ -5,6 +5,7 @@ body{
     background-color: black;
 }
 #back{
+  display: none;
     width: 100%;
     position: fixed;
     left: 0;
@@ -13,6 +14,7 @@ body{
     pointer-events: none;
 }
 #textback{
+  display: none;
     position: absolute;
     width: 100%;
     left: 0;
@@ -99,7 +101,12 @@ body{
 }
 #textarea a{
   font-size: 25px;
+  color: rgb(200, 200, 200);
+  transition: all .2s;
+}
+#textarea a:hover{
   color: white;
+  text-shadow: 0 0 5px white;
 }
 
 /*=============================
@@ -422,4 +429,65 @@ tweetボタン
 =============================*/
 #ly_portfolio{
   width: 100%;
+}
+
+/*=============================
+ローディング
+=============================*/
+#loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(19, 17, 44);
+  z-index: 1000;
+}
+#loading_line{
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 15%;
+  background-color: rgb(54, 54, 54);
+}
+#scanner{
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: aqua;
+  box-shadow: 0px 0px 12px aqua;
+  animation: scanner-loop 3s ease-in-out infinite;
+}
+@keyframes scanner-loop{
+  0%{
+      width: 0;
+      right: auto;
+      left: 0;
+  }
+  50%{
+      width: 100%;
+      right: auto;
+      left: 0;
+  }
+  50.00001%{
+      right: 0;
+      left: auto;
+  }
+  100%{
+      width: 0;
+      right: 0;
+      left: auto;
+  }
+}
+#loading_text{
+  position: absolute;
+  bottom: 12%;
+  right: 3%;
+  font-family: 'hexameteor';
+  bottom: 10%;
+  color: aqua;
+  font-size: 40px;
+  text-shadow: 0 0 5px aqua;
 }
