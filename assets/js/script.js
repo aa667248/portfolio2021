@@ -18,7 +18,9 @@ $(function(){
         }
     });
   });
-
+  setTimeout(function(){
+    loading(false)
+},3000)
 
 
 function Resize(e){
@@ -68,9 +70,29 @@ function passcode(){
         document.getElementById('passcode_result').innerHTML = '背景グラデーション回転開始'
         $('#passcode_result').css({color: 'green'})
         background_rotation()
+    }else
+    if(document.getElementById('pass').value==72631129){
+        document.getElementById('passcode_result').innerHTML = 'ローディング画面表示(9秒)'
+        $('#passcode_result').css({color: 'green'})
+        loading(true)
+        setTimeout(function(){
+            loading(false)
+        },9000)
     }else{
         document.getElementById('passcode_result').innerHTML = 'パスコードが違います'
         $('#passcode_result').css({color: 'red'})
         $('#answer_zoom').css({display: 'none'})
+    }
+}
+function loading(value){
+    if(value==false){
+        $('#loading').css({display: 'none'})
+        $('#back').css({display: 'inline'})
+        $('#textback').css({display: 'inline'})
+    }else
+    if(value==true){
+        $('#loading').css({display: 'inline'})
+        $('#back').css({display: 'none'})
+        $('#textback').css({display: 'none'})
     }
 }
