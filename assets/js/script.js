@@ -96,3 +96,4 @@ function loading(value){
         $('#textback').css({display: 'none'})
     }
 }
+
