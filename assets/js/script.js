@@ -5,6 +5,9 @@ $(function(){
         background_rotation()
         console.log('↓お前の情報')
         ip()
+        setTimeout(function(){
+            loading(false)
+        },3000)
     })
     $(window).resize(Resize);
     $('.btn-trigger').on('click', function() {
@@ -18,9 +21,6 @@ $(function(){
         }
     });
   });
-  setTimeout(function(){
-    loading(false)
-},3000)
 
 
 function Resize(e){
